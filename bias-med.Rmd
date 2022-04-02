@@ -3,7 +3,7 @@ title: "The Crisis in Health Research"
 subtitle: ""  
 author: "Sam Harper, Nicholas B. King"
 institute: " <br> </br>"
-date: "MED4 <br> 2022-04-04 </br>"
+date: "<br> </br> Medicine & Society Elective  <br> 2022-04-04 </br>"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -64,6 +64,95 @@ class: center, top, inverse
 ## .gray[**1.2 Significance testing**]
 ## .gray[**1.3 Non-replication**]
 ## .gray[**1.4 Incentive structure**]
+]
+
+---
+## Questions for you
+.right-column[
+### 1. When you read or hear about new research (publication or talk), what are things that would make you trust the result? What would make you skeptical?
+
+### 2. Did you ever investigate it further? What did you do, and how did it go?
+]
+
+---
+## Definitions
+.footnote[Source: https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html]
+
+.left-column[
+- May not be used consistently.
+
+- Clarify whether data and analysis are different.
+]
+
+.right-column[
+```{r, echo=FALSE, out.width="80%"}
+knitr::include_graphics(here("images", "rr-matrix.png"))
+```
+]
+
+---
+## What is a replication?
+.pull-left[
+- *Exact* replication is impossible (without time travel)
+
+- 
+]
+.pull-right[
+.center[
+![](https://tenor.com/view/spider-man-we-one-gif-18212100.gif)
+]]
+
+---
+## Do we really mean 'replication'?
+
+.center[
+```{r, echo=F, out.width="90%"}
+knitr::include_graphics(here("images", "childers-title.png"))
+```
+]
+
+---
+## Do we really mean 'replication'?
+
+.center[
+```{r, echo=F, out.width="90%"}
+knitr::include_graphics(here("images", "childers-title-rev.png"))
+```
+]
+
+
+---
+### Considering 'robustness'
+
+.footnote[Shanil Ebrahim, et al., “Reanalyses of randomized clinical trial data”, *JAMA*, 312(10), 2014, pp. 1024–32.]
+
+.left-column[
+- What if we tweak prior results?
+
+- Many decisions affect the 'final' result.
+
+- Would it matter?
+]
+.right-column[
+.center[
+```{r, echo=F, out.width="90%"}
+knitr::include_graphics(here("images", "ebrahim-title.png"))
+```
+]]
+
+---
+### What leads to different answers?
+- Reducing measurement error:
+.center[
+```{r, echo=F, out.width="80%"}
+knitr::include_graphics(here("images", "ebrahim1.png"))
+```
+]
+- Allowing for effect modification:
+.center[
+```{r, echo=F, out.width="80%"}
+knitr::include_graphics(here("images", "ebrahim2.png"))
+```
 ]
 
 ---
