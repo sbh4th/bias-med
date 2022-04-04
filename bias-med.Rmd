@@ -42,24 +42,25 @@ pdf2png = function(path) {
 library(xaringanthemer)
 style_xaringan(text_color = "#000000", header_color = "#737373", text_font_size = "24px",  text_font_family = "'Lucida Sans'", header_font_google = google_font("Source Sans Pro"), header_font_weight="lighter", title_slide_background_color =  "#ffffff", title_slide_text_color = "#000000", link_color = "#0000ee", footnote_font_size = "0.5em")
 ```
+
 .pull-left[
+```{r, echo=F}
+knitr::include_graphics(here("images", "booze-90s.png"))
+```
+]
+
+--
+
+.pull-right[
 ## Questions for you
 ### 1. When you read or hear about new research (publication or talk), what are things that would make you trust the result? What would make you skeptical?
 
 ### 2. Did you ever investigate it further? What did you do, and how did it go?
 ]
 
-.pull-right[
-```{r, echo=F}
-knitr::include_graphics(here("images", "booze-90s.png"))
-```
-]
-
 ---
 class: center, top, inverse
 # .orange[**Outline**]
-
---
 
 .left[
 ## .orange[**What is the replication crisis?**]
@@ -73,9 +74,17 @@ class: center, top, inverse
 
 .left[
 ## .orange[**What is the replication crisis?**]
-## .gray[**What do we mean by replication?**]
-## .gray[**1.3 Non-replication**]
-## .gray[**1.4 Incentive structure**]
+## .gray[**What caused the crisis?**]
+## .gray[**What are some potential solutions?**]
+
+]
+
+---
+.footnote[Source: Borgman (1997)]
+.center[
+```{r, echo=F}
+knitr::include_graphics(here("images", "random.png"))
+```
 ]
 
 ---
@@ -84,11 +93,11 @@ class: center, top, inverse
 .pull-left[
 Most studies have low prior probability of being true.
 
-Less likely true if:
-- Smaller size.
-- Smaller effects.
+Published research is less likely true if:
+- Smaller size study.
+- Smaller "true" effects.
 - Many tests conducted.
-- Flexible study design analysis
+- Flexible study design analysis.
 - Conflicts of interest present.
 - Sexy/timely/popular topic.
 ]
@@ -205,18 +214,157 @@ knitr::include_graphics(here("images", "pashler-psychsci-2012.png"))
 ]
 
 ---
-## Definitions
+### Meanwhile, in biomedical research...
+.footnote[Source: C Glenn Begley and Lee M Ellis, “Drug development: Raise standards for preclinical cancer research”, *Nature*, 483(7391), 2012, pp. 531–3.]
+
+.pull-left[
+Authors tried to replicate 53 “landmark” drug development studies.
+
+Only 6 (11%) successfully replicated. 
+
+Why not?  
+- Non blinding of experimental vs. control groups. 
+
+- Selective reporting of research results. 
+]
+
+.pull-right[
+.center[
+```{r, echo=F}
+knitr::include_graphics(here("images", "nature-rep.png"))
+```
+]]
+
+---
+### Non-replication of candidate gene studies
+.footnote[Ioannidis (2011)]
+.center[
+```{r, echo=F, out.width="80%"}
+knitr::include_graphics(here("images", "ioannidis-epid.png"))
+```
+]
+
+---
+.footnote[See Ritchie, *Science Fictions* (2019), Baker *Nature* (2018)]
+.pull-left[
+## Et cetera, et cetera...
+### Also evidence of high-profile non-replication studies in:
+- Psychiatry
+- Neurobiology
+- Chemistry
+- Biology
+- Ecology & evolution
+- Oceanography
+- Likely any place we have not looked...
+]
+
+.pull-right[
+.center[
+```{r, echo=F, out.width="80%"}
+knitr::include_graphics(here("images", "baker-cover.png"))
+```
+]]
+
+---
+class: center, top, inverse
+# .background[x]
+
+# .orange[Concerns about reliablility of findings across multiple disciplines led to collaborative, large-scale *replication* studies.]
+
+---
+## Distinctions between commonly used terms
+.footnote[ National Academy of Sciences (2019)]
+.pull-left[
+### Replication
+Using using independent investigators, methods, data, equipment, and protocols, we arrive at the same conclusions and/or the same estimate of the effect.
+
+.blue[There can be good reasons why findings do not replicate.]
+
+]
+
+--
+
+.pull-right[
+### Reproducibility
+If we start from the *same* data gathered by the scientist we can reproduce the same results, p-values, confidence intervals, tables and figures as in the original report.
+
+.red[There are fewer reasons for non-reproducibility.]
+
+]
+
+---
 .footnote[Source: https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html]
 
 .left-column[
+## Definitions
 - May not be used consistently.
 
-- Clarify whether data and analysis are different.
+- Clarify whether data and analysis are different from original study.
 ]
 
 .right-column[
+.center[
 ```{r, echo=FALSE, out.width="80%"}
 knitr::include_graphics(here("images", "rr-matrix.png"))
+```
+]]
+
+---
+.footnote[Nosek et al., [2015](https://www-science-org/doi/10.1126/science.aac4716). Also see letters and responses: http://bit.ly/1Xg9lQl]
+
+.pull-left[
+```{r, echo=F}
+knitr::include_graphics(here("images", "osc-2015-method.png"))
+```
+]
+
+.pull-right[
+```{r, echo=F}
+knitr::include_graphics(here("images", "nosek-abstract.png"))
+```
+]
+
+---
+.footnote[ Nosek et al. (2015)]
+
+.left-column[
+### Effect sizes are much lower in replication studies.
+]
+.right-column[
+```{r,  echo=F, out.width = 600}
+knitr::include_graphics(here("images", "nosek-fig.png")) 
+```
+]
+
+---
+.footnote[Camerer et al. (2016)]
+
+.left-column[
+### No better in Economics
+- Increased the number of participants by a factor of five
+
+- Preregistered their study and analysis designs before any data collection.
+]
+
+.right-column[
+.center[
+```{r,  echo=F, out.width = 650}
+knitr::include_graphics(here("images", "camerer-abstract.png")) 
+```
+]]
+
+---
+## Surely the "top" journals are better, right?
+.footnote[ Camerer et al. [(2018)](https://www.nature.com/articles/s41562-018-0399-z)]
+
+.pull-left[
+"We find a significant effect in the same direction as the original study for 13 (62%) studies, and the effect size of the replications is on average about 50% of the original effect size"
+
+"The relative effect size of true positives is estimated to be 71%, suggesting that both .red[false positives and inflated effect sizes] of true positives contribute to imperfect reproducibility."
+]
+.pull-right[
+```{r, echo=F}
+knitr::include_graphics(here("images", "camerer-nature-fig-a.png"))
 ```
 ]
 
@@ -237,6 +385,18 @@ knitr::include_graphics(here("images", "rr-matrix.png"))
 .pull-right[
 .center[
 ![](https://tenor.com/view/spider-man-we-one-gif-18212100.gif)]]
+
+---
+.footnote[Source: Evans et al., *Testing Treatments* (2011)]
+.left-column[
+### Can think of cluster-randomized trials as replications
+]
+.right-column[
+.center[
+```{r, echo=F, out.width="80%"}
+knitr::include_graphics(here("images", "crash2-meta-analysis.png"))
+```
+]]
 
 ---
 ## Do we really mean 'replication'?
@@ -263,7 +423,7 @@ knitr::include_graphics(here("images", "childers-title-rev.png"))
 .footnote[Shanil Ebrahim, et al., “Reanalyses of randomized clinical trial data”, *JAMA*, 312(10), 2014, pp. 1024–32.]
 
 .left-column[
-- What if we tweak prior results?
+- What if we tweak prior methods?
 
 - Many decisions affect the 'final' result.
 
@@ -292,7 +452,29 @@ knitr::include_graphics(here("images", "ebrahim2.png"))
 ```
 ]
 
+---
+.footnote[Baker *Nature* (2018)]
+.left-column[
+## Scentists think there is a "reproducibility" crisis
 
+### or a "slight" crisis?  `r emo::ji("thinking_face")`
+]
+.right-column[
+.center[
+```{r, echo=F, out.width="70%"}
+knitr::include_graphics(here("images", "baker-crisis.png"))
+```
+]]
+
+---
+class: center, top, inverse
+# .orange[**Outline**]
+
+.left[
+## .gray[**What is the replication crisis?**]
+## .orange[**What caused the crisis?**]
+## .gray[**What are some potential solutions?**]
+]
 
 
 ---
@@ -316,80 +498,68 @@ knitr::include_graphics(here("images", "ebrahim2.png"))
 ]
 
 ---
-.footnote[ Munafo et al. (2017)]
+.footnote[ George, Int J Clin Oncol (2016) 21:15–21]
 
-.center[Affects the entire research lifecycle
-```{r,  echo=F, out.width = 900}
-knitr::include_graphics(here("images", "munafo-figure.png"))
-```
-]
-
----
-class: center, top, inverse
-# .background[x]
-
-# .orange[**How do we know that science isn't working?**]
-
---
-
-# .orange[**Ask scientists.**]
-
----
-.footnote[ Christensen et al. (2019) surveyed 3247 US researchers funded by NIH]
-.left-column[
-.right[
-### Norm support:
-### "In theory"
-#### .white[x]
-### "Me"
-####.white[x]
-### .blue["Others"]
-]]
-
-.right-column[
-```{r, echo=F}
-knitr::include_graphics(here("images", "christensen-norms-arrow.png"))
-```
-]
-
----
-.footnote[Fanelli *PLoS ONE* (2011)]
-.left-column[
-### Scientists admit to engaging in questionable research practices.
-
-
-]
-.right-column[
 .center[
-```{r, echo=F, out.width="70%"}
-knitr::include_graphics(here("images", "fanelli-qrp-figure.png"))
+```{r,  echo=F, out.width = "100%"}
+knitr::include_graphics(here("images", "george-fraud-table.png"))
 ```
-]]
+]
 
 ---
-.footnote[Baker *Nature* (2018)]
-.left-column[
-## Scentists think there is a "reproducibility" crisis
+### The coronavirus pandemic has not helped.
+.footnote[See reporting by Davey et al. in [*The Guardian*](https://www.theguardian.com/world/2020/jun/03/covid-19-surgisphere-who-world-health-organization-hydroxychloroquine)]
 
-### or a "slight" crisis?  `r emo::ji("thinking_face")`
+.pull-left[
+- High profile studies of 96k patients across 671 hospitals.
+
+- Claimed hydroxychloroquine increased mortality from COVID-19.
+
+- Immediately led to WHO halting the hydroxychloroquine arm of its global trials.
+
+- Researchers subsequently questioned irregularities in the data, ethics review, protocols, statistical analysis. 
+
+- Two papers (other in *NEJM*) were retracted.
 ]
-.right-column[
+
+.pull-right[
+```{r,  echo=F, out.width = "100%"}
+knitr::include_graphics(here("images", "surgisphere-lancet-retracted.png"))
+```
+]
+
+---
+### The coronavirus pandemic has not helped.
+.footnote[See reporting by [Meyerowitz-Katz](https://gidmk.medium.com/is-ivermectin-for-covid-19-based-on-fraudulent-research-part-4-f30eeb30d2ff)]
+
+.pull-left[
+- Ivermectin known to be effective for parasitic diseases.
+
+- Lebanese trial claimed *huge effect* of ivermectin on lowering SARS-CoV2 viral load.
+
+- Requests for trial data to verify the results by independent researchers were denied.
+
+- Researchers subsequently gained access, found serious irregularities. 
+
+- Ultimately retracted.
+]
+
+.pull-right[
+```{r,  echo=F, out.width = "100%"}
+knitr::include_graphics(here("images", "ivermectin-trial-data.png"))
+```
+]
+
+---
+.footnote[Reis et al. *NEJM*, March 30, 2022 DOI: 10.1056/NEJMoa2115869]
+
 .center[
-```{r, echo=F, out.width="70%"}
-knitr::include_graphics(here("images", "baker-crisis.png"))
+```{r,  echo=F, out.width = "80%"}
+knitr::include_graphics(here("images", "reis-nejm-title.png"))
+knitr::include_graphics(here("images", "reis-nejm-table2.png"))
 ```
-]]
-
----
-class: center, top, inverse
-# .orange[**1. Scientific Integrity Problems**]
-
-.left[
-## .gray[**1.1 Mertonian norms**]
-## .orange[**1.2 Significance testing**]
-## .gray[**1.3 Non-replication**]
-## .gray[**1.4 Incentive structure**]
 ]
+
 ---
 .pull-left[
 ## A lot of irreproducible or unreliable research stems from Null Hypothesis Significance Testing (NHST).
@@ -402,6 +572,41 @@ knitr::include_graphics(here("images", "pushing-for-p.png"))
 ]
 
 .footnote[ https://mobile.twitter.com/wviechtb/status/1228327958810648576/photo/1]
+
+---
+.footnote[ Lash (2017)]
+.left-column[
+### NHST facilitates non-replication
+.red[Study results are sampled from the (---) distribution, but we only see 'statistically significant' ones ]
+
+]
+.right-column[
+.center[
+```{r, echo=F, out.width="90%"}
+knitr::include_graphics(here("images", "lash-aje-2017d.png"))
+```
+]]
+
+--
+Implications for planning, meta-analysis, and replication studies.
+
+---
+### The coronavirus pandemic has not helped.
+.footnote[Source: Pearson, *Nature* (2021)]
+
+.pull-left[
+.center[
+```{r, echo=F, out.width="80%"}
+knitr::include_graphics(here("images", "pearson-samples.png"))
+```
+]]
+
+.pull-right[
+.center[
+```{r, echo=F, out.width="70%"}
+knitr::include_graphics(here("images", "pearson-trials.png"))
+```
+]]
 
 ---
 ### Researcher "degrees of freedom" are difficult to control
@@ -462,21 +667,6 @@ background-size: contain
 background-image: url(images/hacking-result2.png)
 background-size: contain
 
----
-## How NHST facilitates non-replication
-.footnote[ Lash (2017)]
-.left-column[
-
-.red[Study results are sampled from the (---) distribution, but we only see 'statistically significant' ones ]
-
-]
-.right-column[
-.center[
-```{r, echo=F, out.width="90%"}
-knitr::include_graphics(here("images", "lash-aje-2017d.png"))
-```
-]]
-
 
 ---
 .left-column[
@@ -494,6 +684,46 @@ Two estimates:
 knitr::include_graphics(here("images", "aha-ns.jpeg"))
 ```
 ]
+
+---
+### Good advice on how to get *p*<0.05
+
+.pull-left[
+```{r, echo=F}
+knitr::include_graphics(here("images", "wansink-manipulation.png"))
+knitr::include_graphics(here("images", "wansink-p-hacking-dv.png"))
+```
+]
+
+.pull-right[
+```{r, echo=F}
+knitr::include_graphics(here("images", "wansink-p-hacking-int.png"))
+```
+]
+
+---
+.footnote[Archived post [here](https://web.archive.org/web/20170312041524/http:/www.brianwansink.com/phd-advice/the-grad-student-who-never-said-no).]
+
+.pull-left[
+*"I gave her a data set of a self-funded, failed study which had .red[null results]... I said, ‘This cost us a lot of time and our own money to collect. There’s got to be something here we can salvage because it’s a cool (rich & unique) data set.’ I had three ideas for potential Plan B, C, & D directions (since Plan A had failed)."* -blog, 2016
+
+Enterprising grad students found:
+- impossible values
+- incorrect ANOVA results
+- dubious p-values
+
+Wansink denied requests for access to the original data.
+]
+
+.pull-right[
+```{r, echo=F}
+knitr::include_graphics(here("images", "wansink-vox.png"))
+```
+
+Wansink resigned from Cornell in 2019.
+]
+
+
 ---
 .left-column[
 .footnote[ Chavalarais et al. (2013)]
@@ -593,90 +823,12 @@ All peer reviewed, required to be deposited in a registry.
 All studies had results.
 ]
 
---
-
 .right-column[
 .center[
 ```{r, echo=F, out.width="65%"}
 knitr::include_graphics(here("images", "mervis-franco-fig.png"))
 ```
 ]]
-
----
-class: center, top, inverse
-# .orange[**1. Scientific Integrity Problems**]
-
-.left[
-## .gray[**1.1 Mertonian norms**]
-## .gray[**1.2 Significance testing**]
-## .orange[**1.3 Non-replication**]
-## .gray[**1.4 Incentive structure**]
-]
-
----
-## Distinctions between commonly used terms
-.footnote[ National Academy of Sciences (2019)]
-.pull-left[
-### Replication
-Using using independent investigators, methods, data, equipment, and protocols, we arrive at the same conclusions and/or the same estimate of the effect.
-
-.blue[There can be good reasons why findings do not replicate.]
-
-]
-
---
-
-.pull-right[
-### Reproducibility
-If we start from the *same* data gathered by the scientist we can reproduce the same results, p-values, confidence intervals, tables and figures as in the original report.
-
-.red[There are fewer reasons for non-reproducibility.]
-
-]
----
-### Large scale efforts to replicate studies are not reassuring
-.footnote[ Nosek et al. (2017), Camerer et al. (2016)]
-
-.pull-left[
-#### In Psychology
-```{r,  echo=F, out.width = 650}
-knitr::include_graphics(here("images", "nosek-abstract.png")) 
-```
-]
-
-.pull-right[
-#### In Economics
-```{r,  echo=F, out.width = 650}
-knitr::include_graphics(here("images", "camerer-abstract.png")) 
-```
-]
-
----
-.footnote[ Nosek et al. (2017)]
-
-.left-column[
-### Effect sizes are much lower in replication studies.
-]
-.right-column[
-```{r,  echo=F, out.width = 650}
-knitr::include_graphics(here("images", "nosek-fig.png")) 
-```
-]
-
----
-## Surely the "top" journals are better, right?
-.footnote[ Camerer et al. [(2018)](https://www.nature.com/articles/s41562-018-0399-z)]
-
-.pull-left[
-"We find a significant effect in the same direction as the original study for 13 (62%) studies, and the effect size of the replications is on average about 50% of the original effect size"
-
-"The relative effect size of true positives is estimated to be 71%, suggesting that both .red[false positives and inflated effect sizes] of true positives contribute to imperfect reproducibility."
-]
-.pull-right[
-```{r, echo=F}
-knitr::include_graphics(here("images", "camerer-nature-fig-a.png"))
-```
-]
 
 ---
 # What about peer review?
@@ -697,6 +849,27 @@ knitr::include_graphics(here("images", "camerer-nature-fig-a.png"))
 ]
 
 .footnote[ Smith (2010), editor at *BMJ* for many years.]
+
+---
+## Okay, forget peer review
+.footnote[See https://www.cbc.ca/news/health/covid-19-vaccine-study-error-anti-vaxxers-1.6188806]
+.pull-left[
+- Study *preprints* get science out rapidly, before peer review.
+
+- Explosion of preprints during COVID-19
+
+- 12 authors from Ottawa Heart Institute published preprint claiming 1 in 1000 vaccine recipients had myocarditis.
+  - Case series
+  - Wrong denominators (33,000 instead of 850,000)
+  - Revised risk 1 in 25,000
+]
+
+.pull-right[
+.center[
+```{r, echo=F, out.width="100%"}
+knitr::include_graphics(here("images", "kafil-withdrawn.png"))
+```
+]]
 
 
 ---
@@ -739,6 +912,11 @@ class: center, top, inverse
 ## .gray[**What do we mean by replication?**]
 ## .orange[**What are some potential solutions?**]
 ]
+
+---
+class: center, middle, inverse
+
+# .orange[**Preregistration of studies**]
 
 ---
 # What is study preregistration?
@@ -791,15 +969,6 @@ Good for planning and hypothesizing, .red[not a straightjacket.]
  ###  .blue[Assuring that all of the evidence is available for synthesis.]
 ]
 
-
----
-# Writing up pre-registered studies
-
-## 1. Include a link to the registration 
-## 2. Report *all* pre-registered results.
-## 3. Explain and justify deviations.
-## 4. Non-registered analyses appropriately described as "exploratory" or "hypothesis generating".
-
 ---
 # Why does preregistration matter?
 
@@ -824,6 +993,14 @@ In 2000 NHLBI required the registration of primary outcome on ClinicalTrials.gov
 knitr::include_graphics(here("images", "kaplan-redrawn.png"))
 ```
 ]
+
+---
+class: center, middle, inverse
+
+# .orange[**What if my results are null?**]
+
+# .orange[**You showed us that they won't get published!**]
+
 
 
 ---
@@ -872,8 +1049,8 @@ class: center, top, inverse
 ---
 .footnote[Zarin *NEJM* (2019)]
 .center[
-A majority of registerd RCTs still not reported.
-```{r, echo=F, out.width="70%"}
+A majority of (pre-COVID-19) registered RCTs still not reported.
+```{r, echo=F, out.width="80%"}
 knitr::include_graphics(here("images", "zarin-nejm-2019-fig.png"))
 ```
 ]
@@ -921,17 +1098,14 @@ knitr::include_graphics(here("images", "goldacre-compare-table.png"))
 .footnote[See Nosek et al. [(2019)](https://doi.org/10.1016/j.tics.2019.07.009) and Szollosi et al. [(2020)](https://doi.org/10.1016/j.tics.2019.11.009)]
 
 ---
-class: center, top, inverse
-# .orange[**2. Design Solutions**]
+class: center, middle, inverse
 
-.left[
-## .gray[**2.1 Preregistration**]
-## .orange[**2.2 Pre-analysis plans**]
-## .gray[**2.3 Reporting guidelines**]
-]
+# .orange[**Pre-analysis plans**]
+
 
 ---
 ## **H**ypothesizing **A**fter the **R**esults are **K**nown (HARKing)
+.footnote[ *New Yorker*, 2014-12-07]
 
 .left-column[
 - Pretending what you found was what you were looking for.
@@ -944,7 +1118,7 @@ class: center, top, inverse
 knitr::include_graphics(here("images", "targets.png"))
 ```
 ]
-.footnote[ *New Yorker*, 2014-12-07]
+
 
 ---
 # What is a pre-analysis plan?
@@ -1019,25 +1193,6 @@ knitr::include_graphics(here("images", "notebook.png"))
 - Threats/mitigation/robustness checks.
 
 - Dissemination plans
-]
-
----
-# Example from development economics
-.footnote[ Casey et al. [(2012)](https://academic.oup.com/qje/article-abstract/127/4/1755/1841616?redirectedFrom=fulltext)]
-
-.pull-left[
-```{r, echo=F}
-knitr::include_graphics(here("images", "casey-title.png"))
-```
-]
-
---
-
-.pull-right[
-### Conclusions:
-```{r, echo=F}
-knitr::include_graphics(here("images", "casey-conclusion.png"))
-```
 ]
 
 ---
@@ -1244,19 +1399,6 @@ class: center, middle, inverse
 ## .orange[**They do not guarantee reliable or valid research**]
 
 ---
-
----
-class: center, top, inverse
-# .orange[**1. Scientific Integrity Problems**]
-
-.left[
-## .gray[**1.1 Mertonian norms**]
-## .gray[**1.2 Significance testing**]
-## .gray[**1.3 Non-replication**]
-## .orange[**1.4 Incentive structure**]
-]
-
----
 ## Incentive problems
 .right-column[
 ### Reward structure
@@ -1268,43 +1410,14 @@ class: center, top, inverse
 ]
 
 ---
-## Incentive problems
-### Remember Brian Wansink?
-### After encouraging his postdoc to "find" specific results, fish for interactions, change the dependent variable, and eliminate outliers, he concluded:
-
-.center[
-```{r, echo=F}
-knitr::include_graphics(here("images", "wansink-careerism.png"))
-```
-]
-
----
 # Summary points
-## Science is conducted by humans.
-## Many counternorms exist that undermine scientific integrity.
+.right-column[
+### Science is conducted by humans.
+#### Extra-scientific factors matter, not necessarily malicious intent. 
 
---
+### Changing norms is hard
+#### Many incentives exist that undermine scientific integrity.
 
-.center[
-## .orange[What can we do about it?]
+### Transparency and openness can help
+#### Making research process transparent is the bare minimum, and does not guarantee 'true' results.
 ]
-
----
-### A reproducible path forward: Reminaging the research lifecycle?
-```{r, echo=F}
-knitr::include_graphics(here("images", "research-lifecycle-solution.png"))
-```
-
-.footnote[ Policy Design & Evaluation Lab (2017)]
-
----
-class: center, top, inverse
-# .orange[**Break!**] `r emo::ji("coffee")`
-```{r, echo=F}
-countdown(minutes = 10, 
-          left = 0, right = 0, bottom = "15%", top = "15%",
-          padding = "50px",
-          margin = "5%",
-          font_size = "7em",
-          color_text= '#f5bc6c')
-```
